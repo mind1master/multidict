@@ -20,6 +20,9 @@ cache:
 before_cache:
   - rm -f $HOME/.cache/pip/log/debug.log
 
+before_install:
+  - env
+  - echo "$WEBKNJAZ"
 install:
   - pip install --upgrade pip wheel
   - pip install --upgrade setuptools
@@ -45,6 +48,7 @@ env:
     # are considered as enabled if they are any non empty strings.
     - MULTIDICT_NO_EXTENSIONS=
     - MULTIDICT_NO_EXTENSIONS=X
+    - secure: "YM/c9+Kn1fScix+e3A55vm7H8pK5zAd8odz+4OTkQvOtpOgHiHq08wE64vDUZYwlBVy6hltT6yIrbDVkW9gz2gkxqmneWo8iMb2xjVR5VAHfAytHAbVmTXL0J0egK7+r2gPbXhP7UNfnJEq3BCnlyN5HHge6hQeIpK9dTJv51wQrhq0KPmWvoPJ7opWQvaGhPbxTJ9DDCbnXoSxHasV6FRaRY32I3T1OrKdI3WPi6VwdCm3erlY754WuCbuAIM5+LllXFLE7j4YKioZTZlPA0GF4t8vTbMa/GwFvWqOA9nwuPM0lcYazFuCyvbZiOUvLZVRKhWfo6Qatvd9YkgcJK/4+wRwBNJFZNcOIYNjNw98PibN23d9tD3hBnFL4Op2IgQUTJmLKnWdj1orAtZozc26tO906gHHPbHY1HzKlFUYlaaMwjeH2kaeRuNYIfj+aGyPTLbIYehKJ2MU9v5moY0jLQJZP4Syz03fAgAcTj6iI9zC/ImN6NBWEBY059RvsGGGXuD5e/v8QCYySEsuYDiIpcoZnwwK1EWIjlRO5dedgm60ii0hrIdDJGjtAZM2ETTPJX3N9kn8g27WddVGUJU1dybeugjKrF2qUC/+NbG1RxMj12yg2QlhEVjRJDFSng0q0qP/8REq/AI7Y8OSenh1RRl2tSlRulNmHf9fajsY="
 
 deploy:
   skip_cleanup: true
